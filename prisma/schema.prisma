@@ -72,6 +72,14 @@ model Experience {
   @@map("experiences")
 }
 
+model Resume {
+   id          String   @id @default(uuid())
+   resume String
+   createdAt   DateTime @default(now())
+   updatedAt   DateTime @updatedAt
+
+}
+
 enum UserRole {
   admin
   user

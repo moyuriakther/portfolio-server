@@ -47,7 +47,7 @@ const deleteProject = catchAsync(async (req, res) => {
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: "Project Updated Successfully",
+      message: "Project Deleted Successfully",
       data: result,
     });
   });

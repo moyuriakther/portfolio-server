@@ -8,6 +8,7 @@ import { SkillController } from "./skill.controller";
 const router = Router();
 
 router.get("/",  SkillController.getSkills);
+router.get("/:id", auth(UserRole.admin), SkillController.getSkillById);
 router.post(
   "/",
 //   validateRequest(petValidation.createPetValidation),

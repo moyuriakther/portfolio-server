@@ -11,6 +11,14 @@ const getSkills = async () => {
       });
     return result;
   };
+const getSkillById = async (id: string) => {
+    const result = await prisma.skill.findFirstOrThrow({   
+    where: {
+      id: id
+    }
+      });
+    return result;
+  };
 const updateSkill = async (id: string, data: any) => {
     await prisma.skill.findUniqueOrThrow({   
           where: {
@@ -28,5 +36,6 @@ const updateSkill = async (id: string, data: any) => {
 export const SkillServices = {
     createSkill,
     getSkills,
-    updateSkill
+    updateSkill,
+    getSkillById
 }
