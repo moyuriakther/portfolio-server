@@ -13,6 +13,7 @@ const getResume = catchAsync(async (req, res) => {
     });
 });
 const updateREsume = catchAsync(async (req, res) => {
+  console.log(req.body)
      const result = await ResumeService.updateResume(req.body);
     sendResponse(res, {
       statusCode: httpStatus.OK,

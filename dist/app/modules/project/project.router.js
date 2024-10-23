@@ -10,7 +10,7 @@ const project_controller_1 = require("./project.controller");
 const auth_1 = __importDefault(require("../../middlewares/auth"));
 const router = (0, express_1.Router)();
 router.get("/", project_controller_1.ProjectController.getProjects);
-router.get("/:id", project_controller_1.ProjectController.getProjects);
+router.get("/:id", project_controller_1.ProjectController.getProjectById);
 router.post("/", 
 //   validateRequest(petValidation.createPetValidation),
 (0, auth_1.default)(client_1.UserRole.admin), project_controller_1.ProjectController.addProject);

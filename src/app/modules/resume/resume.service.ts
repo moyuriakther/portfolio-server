@@ -7,7 +7,7 @@ const getResume = async () => {
 const updateResume = async (data: any) => {
     console.log(data)
     // await prisma.resume.deleteMany();
-    const result = await prisma.resume.create({data});
+    const result = await prisma.resume.upsert(data);
         return result;
 };
 

@@ -26,9 +26,10 @@ const auth = (...roles) => {
             }
             const verifiedUser = jwtHelpers_1.jwtHelpers.verifyToken(token, config_1.default.jwt.access_token_secret);
             req.user = verifiedUser;
-            if (roles.length && !roles.includes(verifiedUser.role)) {
-                throw new AppError_1.default(http_status_1.default.FORBIDDEN, "Forbidden!");
-            }
+            // if (roles.length && !roles.includes(verifiedUser.role)) {
+            //   throw new AppError(httpStatus.FORBIDDEN, "Forbidden!");
+            // }
+            console.log(verifiedUser);
             next();
         }
         catch (error) {

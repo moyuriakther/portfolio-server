@@ -21,7 +21,7 @@ const getResume = () => __awaiter(void 0, void 0, void 0, function* () {
 const updateResume = (data) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(data);
     // await prisma.resume.deleteMany();
-    const result = yield prisma_1.default.resume.create({ data });
+    const result = yield prisma_1.default.resume.upsert(data);
     return result;
 });
 exports.ResumeService = { getResume, updateResume };

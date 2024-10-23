@@ -8,7 +8,7 @@ import auth from "../../middlewares/auth";
 const router = Router();
 
 router.get("/",  ProjectController.getProjects);
-router.get("/:id", ProjectController.getProjects);
+router.get("/:id", ProjectController.getProjectById);
 router.post(
   "/",
 //   validateRequest(petValidation.createPetValidation),
